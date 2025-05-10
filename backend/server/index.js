@@ -13,7 +13,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/', taskRoutes);
-
+app.get('/',(req,res)=>{
+  res.send("Welcome to server")
+})
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

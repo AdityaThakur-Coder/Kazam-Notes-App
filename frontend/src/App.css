@@ -1,0 +1,154 @@
+/* App.css */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  width: 759px;
+  height: 742px;
+  margin: 60px auto; /* You can adjust vertical spacing if needed */
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 32px; /* Increase padding to match spacing in design */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05); /* Optional: closer to Figma look */
+  box-sizing: border-box;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.note-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  max-width: 220px;
+  height: 58px;
+  line-height: 1.2;
+  color: #1e1e1e; 
+  font-family: 'Inter', sans-serif;
+}
+
+
+.input-container {
+  width: 500px;
+  height: 72px;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-sizing: border-box; /* Ensure padding and borders are inside the defined width/height */
+}
+
+
+
+.task-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.task-input::placeholder {
+  color: #999;
+}
+
+.add-button {
+  width: 154px;
+  height: 72px;
+  background-color: #8B4513;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+
+.notes-section h3 {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  height: 36px;
+  line-height: 36px; /* vertically centers the text */
+  width: 87px;
+}
+
+
+.task-list {
+  width: 674px;
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border-top: 2px solid #ddd;
+}
+
+.task-item {
+  width: auto;
+  height: 36px;
+  padding: 12px 4px;
+  border-bottom: 2px solid #eee;
+  font-size: 0.95rem;
+}
+
+
+.plus-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* Scrollbar track */
+.task-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Scrollbar thumb (the draggable part) */
+.task-list::-webkit-scrollbar-thumb {
+  background-color: #a35b2a; /* brownish as seen in design */
+  border-radius: 10px;
+}
+
+/* Optional: scrollbar background */
+.task-list::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.task-list {
+  max-height: 310px;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.note-icon {
+  width: 86px;
+  height: 86px;
+}

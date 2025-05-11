@@ -8,7 +8,7 @@ function App() {
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/fetchAllTasks');
+      const res = await axios.get('https://kazam-notes-app-2.onrender.com/fetchAllTasks');
       setTasks(res.data.tasks);
     } catch (err) {
       console.error(err);
@@ -17,7 +17,7 @@ function App() {
 
   const handleAddTask = async () => {
     if (!input.trim()) return;
-    await axios.post('http://localhost:5000/addTask', { text: input });
+    await axios.post('https://kazam-notes-app-2.onrender.com/addTask', { text: input });
     setInput('');
     fetchTasks();
   };

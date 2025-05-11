@@ -7,22 +7,14 @@ const REDIS_KEY = 'FULLSTACK_TASK_ADITYA';
 
 router.post('/addTask', async (req, res) => {
   const { text } = req.body;
-
-  // 👇 Ye validate karega ki `text` string hai ya accidentally object aaya
-  const taskText = typeof text === 'string'
-    ? text
-    : (text && typeof text.task === 'string' ? text.task : '');
-
-  if (!taskText.trim()) {
-    return res.status(400).json({ error: 'Valid task text is required' });
+  if (!text || text.trim() === '') {
+    return res.status(400).json({ error: 'Task text is required' });
   }
 
   try {
     let tasks = await redisClient.get(REDIS_KEY);
     tasks = tasks ? JSON.parse(tasks) : [];
-
-    // 👇 Ab clean string push kar rahe hain
-    tasks.push(taskText);
+    tasks.push(text);
 
     if (tasks.length > 50) {
       await Task.insertMany(tasks.map(text => ({ text })));
@@ -37,7 +29,6 @@ router.post('/addTask', async (req, res) => {
     res.status(500).json({ error: 'Error adding task' });
   }
 });
-
 
 router.get('/fetchAllTasks', async (req, res) => {
   try {

@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./App.css";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import './App.css';
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
 
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/fetchAllTasks");
+      const res = await axios.get('http://localhost:5000/fetchAllTasks');
       setTasks(res.data.tasks);
     } catch (err) {
       console.error(err);
@@ -17,8 +17,8 @@ function App() {
 
   const handleAddTask = async () => {
     if (!input.trim()) return;
-    await axios.post("http://localhost:5000/addTask", { text: input });
-    setInput("");
+    await axios.post('http://localhost:5000/addTask', { text: input });
+    setInput('');
     fetchTasks();
   };
 
@@ -42,7 +42,7 @@ function App() {
           className="task-input"
         />
         <button onClick={handleAddTask} className="add-button">
-          <img src="/plus-icon.png" alt="Add" className="plus-icon" /> Add
+           <img src="/plus-icon.png" alt="Plus Icon" className="plus-icon" />Add
         </button>
       </div>
 
@@ -50,9 +50,7 @@ function App() {
         <h3>Notes</h3>
         <ul className="task-list">
           {tasks.map((task, index) => (
-            <li key={index} className="task-item">
-              {task}
-            </li>
+            <li key={index} className="task-item">{task}</li>
           ))}
         </ul>
       </div>
